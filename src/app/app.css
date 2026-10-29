@@ -1,0 +1,17 @@
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a.ativo {
+  color: rgb(103, 27, 86);
+  font-weight: bold;
+}

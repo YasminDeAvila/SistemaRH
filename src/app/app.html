@@ -1,0 +1,15 @@
+<nav>
+  <a routerLink="/login" routerLinkActive="ativo">Login</a>
+  <a routerLink="/cadastro" routerLinkActive="ativo">Cadastro</a>
+  <a routerLink="/funcionarios" routerLinkActive="ativo" [routerLinkActiveOptions]="{ exact: true }">Lista de funcionários</a>
+  <a routerLink="/funcionarios/novo" routerLinkActive="ativo">Novo funcionário</a>
+  <a routerLink="/enderecos" routerLinkActive="ativo">Endereços</a>
+  <a routerLink="/contatos" routerLinkActive="ativo">Contatos</a>
+</nav>
+
+<hr>
+
+
+
+
+<router-outlet></router-outlet>
