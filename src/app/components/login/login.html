@@ -1,19 +1,32 @@
-
 <div class="flex flex-col items-center justify-center h-screen ">
-    <h3 class="text-2xl font-bold mb-4 text-pink-700">Login - Entre na sua conta</h3>
+    <h3 class="text-2xl font-bold mb-4 text-purple-700">Login - Entre na sua conta</h3>
 
     <div class="bg-white p-8 rounded shadow-md max-w-md w-full flex flex-col">
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Digite seu email" class="mb-4 focus:border-pink-500 w-full rounded p-2 border border-pink-300" >
-    
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" class="mb-4 focus:border-pink-500 w-full rounded p-2 border border-pink-300" >
+        <form class="space-y-4" [formGroup]="form" (ngSubmit)="entrar()">
 
-    <button type="button" class="w-full bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 ">Entrar</button>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" formControlName="email"
+                class="mb-4 focus:border-purple-500 w-full rounded p-2 border border-purple-300">
 
-    <a href="../cadastro/cadastro.html" class="text-pink-600 hover:text-pink-800 mt-4 text-center">Não tem uma conta? Cadastre-se</a>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" formControlName="senha"
+                class="mb-4 focus:border-purple-500 w-full rounded p-2 border border-purple-300">
+
+                @if(erro()){
+                    <p class="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{{erro()}}</p>
+                }
+
+            <button type="submit"
+                [disabled]="carregando()"
+                class="w-full bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-60">
+                {{carregando() ? 'Entrando...' : 'Entrar'}}
+            </button>
+
+            <a routerLink="/cadastro" class="text-purple-600 hover:text-purple-800 mt-4 text-center">Não tem uma conta?
+                Cadastre-se</a>
+
+        </form>
 
     </div>
 </div>
-

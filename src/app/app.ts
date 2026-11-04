@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import {AuthService} from './services/auth';
 
 @Component({
   imports: [RouterOutlet, RouterLinkActive, RouterLink],
@@ -9,4 +10,5 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('SistemaRH');
+  protected readonly auth = inject(AuthService);
 }
