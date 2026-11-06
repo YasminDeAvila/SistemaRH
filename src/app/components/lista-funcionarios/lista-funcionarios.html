@@ -1,1 +1,48 @@
-<p>lista-funcionarios works!</p>
+<main class="">
+    <h2 class="">Colaboradores</h2>
+
+    @if(carregando()){
+        <p role="status" class=""> Carregando Colaboradores</p>
+
+    } @else if (erro()){
+        <p role="alert" class=""></p>
+
+    }@else {
+        <div class="">
+            <table class="">
+
+                <thead class="">
+                    <tr>
+
+                        <th scope="col" class="p-3">ID</th>
+                        <th scope="col" class="p-3">Nome</th>
+                        <th scope="col" class="p-3">E-mail</th>
+                        <th scope="col" class="p-3">Nascimento</th>
+                        <th scope="col" class="p-3">Contatos</th>
+                        <th scope="col" class="p-3">Endereços</th>
+                        <th scope="col" class="p-3">Ações</th>
+                     
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @for(Colaborador of Colaboradores();  track colaborador.id){
+                        <tr class=""></tr>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                        <td class="p-3">{{}}</td>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    }
+</main>
+

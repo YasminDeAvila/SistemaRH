@@ -13,12 +13,11 @@
             <input type="password" id="senha" name="senha" placeholder="Digite sua senha" formControlName="senha"
                 class="mb-4 focus:border-purple-500 w-full rounded p-2 border border-purple-300">
 
-                @if(erro()){
-                    <p class="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{{erro()}}</p>
-                }
+            @if(erro()){
+            <p class="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{{erro()}}</p>
+            }
 
-            <button type="submit"
-                [disabled]="carregando()"
+            <button type="submit" [disabled]="carregando()"
                 class="w-full bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 disabled:cursor-not-allowed disabled:opacity-60">
                 {{carregando() ? 'Entrando...' : 'Entrar'}}
             </button>
